@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo add-apt-repository -y ppa:martin-frost/thoughtbot-rcm
+sudo apt-get update
+sudo apt-get -y install rcm
+sudo apt-get -y install git git-core
+
+git clone https://github.com/thoughtbot/dotfiles ~/.dotfiles
+rcup vim
+rcup vimrc
+rcup vimrc.bundles
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
